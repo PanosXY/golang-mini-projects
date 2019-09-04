@@ -7,77 +7,79 @@ import (
 )
 
 func main() {
-    zero := [5]string{
+    type placeholder [5]string
+
+    zero := placeholder{
         "███",
         "█ █",
         "█ █",
         "█ █",
         "███",
     }
-    one := [5]string{
+    one := placeholder{
         "██ ",
         " █ ",
         " █ ",
         " █ ",
         "███",
     }
-    two := [5]string{
+    two := placeholder{
         "███",
         "  █",
         "███",
         "█  ",
         "███",
     }
-    three := [5]string{
+    three := placeholder{
         "███",
         "  █",
         "███",
         "  █",
         "███",
     }
-    four := [5]string{
+    four := placeholder{
         "█ █",
         "█ █",
         "███",
         "  █",
         "  █",
     }
-    five := [5]string{
+    five := placeholder{
         "███",
         "█  ",
         "███",
         "  █",
         "███",
     }
-    six := [5]string{
+    six := placeholder{
         "███",
         "█  ",
         "███",
         "█ █",
         "███",
     }
-    seven := [5]string{
+    seven := placeholder{
         "███",
         "  █",
         "  █",
         "  █",
         "  █",
     }
-    eight := [5]string{
+    eight := placeholder{
         "███",
         "█ █",
         "███",
         "█ █",
         "███",
     }
-    nine := [5]string{
+    nine := placeholder{
         "███",
         "█ █",
         "███",
         "  █",
         "███",
     }
-    seperator := [2][5]string{
+    seperator := [...]placeholder{
         {
             "   ",
             " ░ ",
@@ -94,7 +96,7 @@ func main() {
         },
     }
 
-    digits := [10][5]string{
+    digits := [...]placeholder{
         zero,
         one,
         two,
