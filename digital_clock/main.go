@@ -4,110 +4,10 @@ import (
     "fmt"
     "time"
     "strconv"
+    ph "digital_clock/placeholders"
 )
 
 func main() {
-    type placeholder [5]string
-
-    zero := placeholder{
-        "███",
-        "█ █",
-        "█ █",
-        "█ █",
-        "███",
-    }
-    one := placeholder{
-        "██ ",
-        " █ ",
-        " █ ",
-        " █ ",
-        "███",
-    }
-    two := placeholder{
-        "███",
-        "  █",
-        "███",
-        "█  ",
-        "███",
-    }
-    three := placeholder{
-        "███",
-        "  █",
-        "███",
-        "  █",
-        "███",
-    }
-    four := placeholder{
-        "█ █",
-        "█ █",
-        "███",
-        "  █",
-        "  █",
-    }
-    five := placeholder{
-        "███",
-        "█  ",
-        "███",
-        "  █",
-        "███",
-    }
-    six := placeholder{
-        "███",
-        "█  ",
-        "███",
-        "█ █",
-        "███",
-    }
-    seven := placeholder{
-        "███",
-        "  █",
-        "  █",
-        "  █",
-        "  █",
-    }
-    eight := placeholder{
-        "███",
-        "█ █",
-        "███",
-        "█ █",
-        "███",
-    }
-    nine := placeholder{
-        "███",
-        "█ █",
-        "███",
-        "  █",
-        "███",
-    }
-    seperator := [...]placeholder{
-        {
-            "   ",
-            " ░ ",
-            "   ",
-            " ░ ",
-            "   ",
-        },
-        {
-            "   ",
-            "   ",
-            "   ",
-            "   ",
-            "   ",
-        },
-    }
-
-    digits := [...]placeholder{
-        zero,
-        one,
-        two,
-        three,
-        four,
-        five,
-        six,
-        seven,
-        eight,
-        nine,
-    }
 
     var (
         hr int
@@ -136,11 +36,11 @@ func main() {
         for i := 0; i < 5; i++ {
             for _, v := range output {
                 if string(v) == ":" {
-                    fmt.Printf("%s ", seperator[toggle][i])
+                    fmt.Printf("%s ", ph.Separator[toggle][i])
                     continue
                 }
                 digit, _ = strconv.Atoi(string(v))
-                fmt.Printf("%s ", digits[digit][i])
+                fmt.Printf("%s ", ph.Digits[digit][i])
             }
             fmt.Println()
         }
